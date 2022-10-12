@@ -42,60 +42,85 @@ const Register = () => {
   }, [dispatch, error, alert]);
   return (
     <>
-      <span className="headline" variant="h2" style={{ padding: "2vmax" ,color: "black"  }}>
-         <Typography style={{ fontSize:"2.5rem", fontStyle: "italic",fontFamily: 'BioRhyme'}}>twick</Typography> 
-        </span>
-   
-    <div className="register">
-       
-      <form className="registerForm" onSubmit={submitHandler}>
-     
+      <span
+        className="headline"
+        variant="h2"
+        style={{ padding: "2vmax", color: "black" }}
+      >
+        <Typography
+          style={{
+            fontSize: "2.5rem",
+            fontStyle: "italic",
+            fontFamily: "BioRhyme",
+          }}
+        >
+          twick
+        </Typography>
+      </span>
 
-        <Avatar
-          src={avatar}
-          alt="User"
-          sx={{ height: "10vmax", width: "10vmax" }}
-          style={{color:"white",backgroundColor:"#1FC193"}}
-        />
+      <div className="register">
+        <form className="registerForm" onSubmit={submitHandler}>
+          <Avatar
+            src={avatar}
+            alt="User"
+            sx={{ height: "10vmax", width: "10vmax" }}
+            style={{ color: "white", backgroundColor: "#1FC193" }}
+          />
 
-        <input  style={{color:"black",backgroundColor:"#1FC193"}} type="file" accept="image/*" onChange={handleImageChange} />
+          <input
+            style={{ color: "black", backgroundColor: "#1FC193" }}
+            type="file"
+            accept="image/*"
+            onChange={handleImageChange}
+          />
 
-        <input
-          type="text"
-          value={name}
-          placeholder="Name"
-          className="registerInputs"
-          required
-          onChange={(e) => setName(e.target.value)}
-        />
+          <input
+            type="text"
+            value={name}
+            placeholder="Name"
+            className="registerInputs"
+            required
+            onChange={(e) => setName(e.target.value)}
+          />
 
-        <input
-          type="email"
-          placeholder="Email"
-          className="registerInputs"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+          <input
+            type="email"
+            placeholder="Email"
+            className="registerInputs"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
-        <input
-          type="password"
-          className="registerInputs"
-          placeholder="Password"
-          required
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+          <input
+            type="password"
+            className="registerInputs"
+            placeholder="Password"
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
-        <Link to="/">
-          <Typography >Already Signed Up? Login Now</Typography>
-        </Link>
+          <Link to="/">
+            <Typography>Already Signed Up? Login Now</Typography>
+          </Link>
 
-        <Button disabled={loading} style={{color:"white",backgroundColor:"#1FC193",paddingLeft:"3rem",paddingRight:"3rem",paddingTop:"0.5rem",paddingBottom:"0.5rem"}}type="submit">
-          Sign Up
-        </Button>
-      </form>
-    </div>
+          <Button
+            disabled={loading}
+            style={{
+              color: "white",
+              backgroundColor: "#1FC193",
+              paddingLeft: "3rem",
+              paddingRight: "3rem",
+              paddingTop: "0.5rem",
+              paddingBottom: "0.5rem",
+            }}
+            type="submit"
+          >
+            Sign Up
+          </Button>
+        </form>
+      </div>
     </>
   );
 };
